@@ -4,8 +4,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="yotpo-api", 
-    version="0.0.1",
+    name="yotpo-api",
+    version="0.0.2",
     author="molotov1907",
     author_email="atanasoff.yordan@gmail.com",
     description="yotpo api integration",

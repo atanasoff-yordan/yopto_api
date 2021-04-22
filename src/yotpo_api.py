@@ -5,9 +5,6 @@ import dateutil.parser
 from typing import Dict, List
 import datetime
 
-logging.basicConfig(level=logging.DEBUG)
-
-
 class YotpoClient:
     def __init__(
         self, client_id: str = None, client_secret: str = None, token_type: str = None
@@ -47,13 +44,16 @@ class YotpoClient:
     def get_reviews(
         self, product_id="yotpo_site_reviews", from_date: int = 0
     ) -> List[Dict]:
+        product_id="yotpo_site_reviews" if product_id is None else product_id
+        from_date=0 if from_date is None else from_date
         current_page = 1
         per_page = 100
         page_count = 0
         reviews = []
         while True:
             response = requests.get(
-                f"{self.apiurl}/v1/widget/{self.client_id}/products/{product_id}/"
+                f"{self.apiurl}/v1/widget/{self.client_id}/products/"
+                f"{product_id or 'yotpo_site_reviews' }/"
                 f"reviews.json?per_page={per_page}?page={current_page}"
             )
             if response.status_code == 200:
