@@ -54,7 +54,7 @@ class YotpoClient:
             response = requests.get(
                 f"{self.apiurl}/v1/widget/{self.client_id}/products/"
                 f"{product_id or 'yotpo_site_reviews' }/"
-                f"reviews.json?per_page={per_page}?page={current_page}"
+                f"reviews.json?per_page={per_page}?&page={current_page}"
             )
             if response.status_code == 200:
                 response = response.json().get("response")
