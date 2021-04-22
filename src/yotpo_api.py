@@ -81,18 +81,11 @@ class YotpoClient:
         return reviews
 
     def create_review(self, review: Dict) -> bool:
+        review.update({"appkey": self.client_id})
+        if not review.get("sku"):
+            review.update({"sku":"yotpo_site_reviews"})
         response = requests.post(
-            self.apiurl + "v1/widget/reviews",
-            json={
-                "appkey": self.client_id,
-                "sku": review.get("sku", "yotpo_site_reviews"),
-                "product_title": review["product_title"],
-                "product_url": review["product_title"],
-                "display_name": review["display_name"],
-                "email": review["email"],
-                "review_content": review["review_content"],
-                "review_title": review["review_title"],
-                "review_score": review["review_score"],
-            },
+            self.apiurl + "reviews/dynamic_create",
+            json=review,
         )
-        return response.status_code == 200
+        return response.json().get("status", {}).get("code",0) == 200

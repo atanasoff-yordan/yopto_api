@@ -13,7 +13,7 @@ def test_review_creation():
             "product_title": "product_title",
             "product_url": "https://www.sephora.com/something",
             "display_name": "John Doe",
-            "email": "jone.dow@gmail.com",
+            "email": "jone.doe@gmail.com",
             "review_content": "the fragrance is good, even thou the texture got worse, anyway, still great value.",
             "review_title": "great value",
             "review_score": 5,

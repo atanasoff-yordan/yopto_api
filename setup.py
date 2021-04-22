@@ -5,12 +5,16 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="yotpo-api",
-    version="0.0.2",
-    author="molotov1907",
+    version="0.0.3",
+    author="yordan atanasoff",
     author_email="atanasoff.yordan@gmail.com",
     description="yotpo api integration",
     long_description=long_description,
     long_description_content_type="text/markdown",
+    url="https://github.com/atanasoff-yordan/yotpo_api",
+    project_urls={
+        "Bug Tracker": "https://github.com/atanasoff-yordan/yotpo_api/issues",
+    },
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
