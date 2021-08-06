@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="yotpo-api",
-    version="0.0.3",
+    version="0.0.4",
     author="yordan atanasoff",
     author_email="atanasoff.yordan@gmail.com",
     description="yotpo api integration",
