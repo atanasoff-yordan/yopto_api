@@ -1,4 +1,4 @@
-# yotpo API
+# Yotpo API
 This is a package to integrate and model the data
 structure and wrap the api calls made to use the
 yotpo api.
