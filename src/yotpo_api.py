@@ -1,6 +1,7 @@
 import logging
 import os
 import requests
+import math
 import dateutil.parser
 from typing import Dict, List
 import datetime
@@ -68,7 +69,7 @@ class YotpoClient:
                         )
                     )
                 )
-                page_count = int(pagination.get("total") / per_page)
+                page_count = math.ceil(pagination.get("total") / per_page)
                 if current_page < page_count:
                     current_page += 1
                 else:
