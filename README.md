@@ -3,6 +3,9 @@ This is a package to integrate and model the data
 structure and wrap the api calls made to use the
 yotpo api.
 
+## Latest version
+[0.0.5](https://pypi.org/project/yotpo-api/0.0.5/)
+
 ## Install
 ```shell
 pip install yotpo-api
